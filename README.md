@@ -1,2 +1,8 @@
-# REDL
-REST Endpoint Definition Language
+# REST Endpoint Description Language
+
+Documentation: /docs
+
+Specification: /docs/spec/README.md
+
+Schema: /schemas/redl.json
+
