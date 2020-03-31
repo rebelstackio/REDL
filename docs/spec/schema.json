@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://json-schema.org/draft-07/schema#",
+	"title": "Core schema meta-schema",
+	"type": "object",
+		"properties": {
+		"redl": {
+			"type":"object",
+			"properties": {
+				"$version": { "type":"string" },
+				"$schema": { "type":"string", "format":"uri-reference" },
+				"$base_url": { "type":"string", "format":"uri-reference" },
+				"$base_schema": { "type":"array", "items": { "type":"string", "format":"uri-reference" } },
+				"endpoints": {
+					"type":"array",
+					"items": {
+						"type":"object",
+						"properties": {
+							"description": { "type":"string" },
+							"path": { "type": "string", "format":"uri-reference" },
+							"verb": { "type": "string", "enum": ["get","post","put","patch","options","delete"] },
+							"request_schema": { "type":"array", "items": { "type":"string", "format":"uri-reference" } },
+							"response_schema": { "type":"array", "items": { "type":"string", "format":"uri-reference" } },
+							"authorization": { "type":"object" },
+							"errors": { "type":"array", "items": { "type":"object" } }
+						}
+					}
+				}
+			}
+		}
+	}
+}
