@@ -1,9 +1,9 @@
 {
 	"redl": {
-		"$version":1.0,
+		"$version":"1.0",
 		"$schema":"https://rebelstack.io/redl/spec/v1/schema.json",
-		"$baseurl":"https://site.example/v1",
-		"base_schema": [
+		"$base_url":"https://site.example/v1",
+		"$base_schema": [
 			"https://site.example/v1/schema/$types.json",
 			"https://site.example/v1/schema/$components.json",
 			"https://site.example/v1/schema/$header.json",
