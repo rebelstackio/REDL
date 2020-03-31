@@ -1,0 +1,75 @@
+{
+	"redl": {
+		"$version":1.0,
+		"$schema":"https://rebelstack.io/redl/spec/v1/schema.json",
+		"$baseurl":"https://site.example/v1",
+		"base_schema": [
+			"https://site.example/v1/schema/$types.json",
+			"https://site.example/v1/schema/$components.json",
+			"https://site.example/v1/schema/$header.json",
+			"https://site.example/v1/schema/$query.json",
+			"https://site.example/v1/schema/$jwt.json"
+		],
+		"endpoints":[
+			{
+				"path":"/users/:uid",
+				"verb":"get",
+				"request_schema": [
+					"https://site.example/v1/schema/users/request/get_byuid.json"
+				],
+				"authorization": {
+					"type": "bearer-token-jwt",
+					"token_schema": [
+						"https://site.example/v1/schema/users/request/jwt_payload_get_byuid.json"
+					]
+				}
+			},
+			{
+				"path":"/users",
+				"verb":"get",
+				"request_schema":[
+					"https://site.example/v1/schema/users/request/get_list.json"
+				],
+				"authorization": {
+					"type": "bearer-token-jwt",
+					"token_schema": [
+						"https://site.example/v1/schema/users/request/jwt_payload_get.json"
+					]
+				}
+			},
+			{
+				"path":"/users/:uid",
+				"verb":"patch",
+				"request_schema": [
+					"https://site.example/v1/schema/users/request/patch.json"
+				],
+				"response_schema": [
+					"https://site.example/v1/schema/users/response/patch.json"
+				],
+				"authorization": {
+					"type": "bearer-token-jwt",
+					"token_schema": [
+						"https://site.example/v1/schema/users/request/jwt_payload_get_byuid.json"
+					]
+				}
+			},
+			{
+				"path":"/users",
+				"verb":"post",
+				"request_schema":[
+					"https://site.example/v1/schema/users/request/post.json"
+				],
+				"response_schema": [
+					"https://site.example/v1/schema/users/response/post.json"
+				],
+				"authorization": {
+					"type": "bearer-token-jwt",
+					"token_schema": [
+						"https://site.example/v1/schema/users/request/jwt_payload_post.json"
+					]
+				}
+			}
+		]
+
+	}
+}
