@@ -12,6 +12,7 @@
 		],
 		"endpoints":[
 			{
+				"description":"get user by uid",
 				"path":"/users/:uid",
 				"verb":"get",
 				"request_schema": [
